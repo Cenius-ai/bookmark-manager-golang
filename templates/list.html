@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h2 class="page-title">Bookmarks</h2>
+  {{if .TagFilter}}
+  <p class="filter-notice">Filtered by tag <strong>{{.TagFilter}}</strong> &mdash; <a href="/">show all</a></p>
+  {{end}}
+</div>
+
+{{if .Bookmarks}}
+<div class="bookmark-list">
+  {{range .Bookmarks}}
+  <article class="bookmark-card">
+    <div class="bookmark-body">
+      <h3 class="bookmark-title">
+        <a href="{{.URL}}" rel="noopener noreferrer" target="_blank">{{.Title}}</a>
+      </h3>
+      <p class="bookmark-url">{{.URL}}</p>
+      {{if .Tags}}
+      <div class="bookmark-tags">
+        {{range .Tags}}
+        <a href="/?tag={{.Name}}" class="tag-chip">{{.Name}}</a>
+        {{end}}
+      </div>
+      {{end}}
+    </div>
+    <time class="bookmark-date" datetime="{{.CreatedAt.Format "2006-01-02"}}">{{.CreatedAt.Format "Jan 2, 2006"}}</time>
+  </article>
+  {{end}}
+</div>
+{{else}}
+<div class="empty-state">
+  <p>{{if .TagFilter}}No bookmarks found for tag <strong>{{.TagFilter}}</strong>.{{else}}No bookmarks yet. <a href="/add">Add your first one.</a>{{end}}</p>
+</div>
+{{end}}
