@@ -37,7 +37,7 @@ See [`INSTALL.md`](INSTALL.md) for full setup and usage instructions.
 
 ## Architecture
 
-`install.sh` provisions dependencies and seeds demo data so the app starts with something real to explore. The Go codebase (51 files) is self-contained — no external services needed to evaluate it. Top-level layout: `database/`, `handlers/`, `models/`, `static/`, `templates/`. Step-by-step setup guide: [`INSTALL.md`](INSTALL.md).
+`install.sh` provisions dependencies and seeds demo data so the app starts with something real to explore. The Go codebase (40 files) is self-contained — no external services needed to evaluate it. Top-level layout: `database/`, `handlers/`, `models/`, `static/`, `templates/`. Step-by-step setup guide: [`INSTALL.md`](INSTALL.md).
 
 ## Usage guide
 
